@@ -1,9 +1,3 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-
-import "./index.css";
-
 let tags = [
   {
     display_name: "British",
@@ -420,15 +414,3 @@ let tags = [
     display_name: "Venezuelan",
   },
 ];
-
-Vue.config.productionTip = false;
-
-let data = {
-  tags: tags,
-  recipeList: [],
-};
-
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount("#app");
