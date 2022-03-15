@@ -66,6 +66,9 @@ export default {
   },
   computed: {
     recipes() {
+      if (this.$root.$data.recipeList.length > 0) {
+        return this.$root.$data.recipeList;
+      }
       return this.unfilteredRecipes.filter((recipe) =>
         recipe.canonical_id.includes("recipe")
       );

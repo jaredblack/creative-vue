@@ -14,7 +14,7 @@
     </h1>
     <router-link to="/recipe-book">
       <button
-        class="absolute inset-x-0 top-[60%] m-auto w-fit border-2 border-purple-600 bg-white px-4 py-1 text-xl text-sm font-semibold text-purple-600 shadow-md hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+        class="absolute inset-x-0 top-[60%] m-auto w-fit border-2 border-purple-600 bg-white px-4 py-1 text-xl font-semibold text-purple-600 shadow-md hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
       >
         Get Started
       </button>
