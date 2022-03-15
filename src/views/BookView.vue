@@ -1,25 +1,49 @@
 <template>
-  <div class="about">
+  <div class="m-auto max-w-7xl">
     <PicHeader text="Recipe Book" />
     <div id="locator-container">
       <div class="search-form">
-        <input
-          class="search-bar rounded-md border-2 px-1 py-1 mx-2 my-2 border-gray-400"
-          type="text"
-        />
-        <button type="submit">Search</button>
+        <form @submit.prevent="searchRecipe">
+          <input
+            class="search-bar mx-2 my-2 rounded-md border-2 border-gray-400 px-1 py-1"
+            type="text"
+            v-model="searchQuery"
+          />
+          <button type="submit" class="bg-green-300 hover:bg-green-500">
+            Search
+          </button>
+        </form>
       </div>
       <div class="locator-buttons">
-        <button @click="toggleTags">Search by Tag</button>
-        <button @click="getRecipes(null, null, true)">Random Recipes</button>
+        <button
+          class="bg-indigo-300 hover:bg-indigo-500 hover:text-white"
+          @click="toggleTags"
+        >
+          Search by Tag
+        </button>
+        <button
+          class="bg-indigo-300 hover:bg-indigo-500 hover:text-white"
+          @click="getRecipes(null, null, true)"
+        >
+          Random Recipes
+        </button>
       </div>
-      <TagList v-if="tagsVisible" />
-      <RecipeList :recipes="recipes" />
+      <TagList v-if="tagsVisible" @clicked="receiveTag" />
+
+      <breeding-rhombus-spinner
+        :animation-duration="2000"
+        :size="65"
+        color="#312e81"
+        v-if="loading"
+        class="m-auto mt-20"
+      />
+      <RecipeList :recipes="recipes" class="mx-5 my-5 font-medium" />
     </div>
   </div>
 </template>
 
 <script>
+import { BreedingRhombusSpinner } from "epic-spinners";
 import PicHeader from "@/components/PicHeader.vue";
 import TagList from "@/components/TagList.vue";
 import RecipeList from "@/components/RecipeList.vue";
@@ -30,12 +54,15 @@ export default {
     return {
       tagsVisible: false,
       unfilteredRecipes: [],
+      searchQuery: "",
+      loading: false,
     };
   },
   components: {
     PicHeader,
     TagList,
     RecipeList,
+    BreedingRhombusSpinner,
   },
   computed: {
     recipes() {
@@ -46,6 +73,7 @@ export default {
   },
   methods: {
     getRecipes(queryString, tagName, random) {
+      this.loading = true;
       let apiURL = "https://tasty.p.rapidapi.com/recipes/list";
       let offset = 0;
       if (random) {
@@ -78,6 +106,7 @@ export default {
           this.$root.$data.recipeList = json.results.filter((recipe) =>
             recipe.canonical_id.includes("recipe")
           );
+          this.loading = false;
         })
         .catch((err) => {
           console.error(err);
@@ -88,6 +117,13 @@ export default {
     },
     toggleTags() {
       this.tagsVisible = !this.tagsVisible;
+    },
+    receiveTag(tag) {
+      this.getRecipes(null, tag, null);
+    },
+    searchRecipe() {
+      console.log("IM SEARCHING FOR " + this.searchQuery);
+      this.getRecipes(this.searchQuery, null, null);
     },
   },
 };

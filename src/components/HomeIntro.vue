@@ -1,12 +1,19 @@
 <template>
-  <div>
+  <div class="relative m-auto max-w-7xl">
+    <div class="aspect-w-1 aspect-h-1 lg:aspect-w-3 lg:aspect-h-2">
+      <img
+        src="../assets/spoons.jpg"
+        alt="spoons"
+        class="h-full w-full object-cover"
+      />
+    </div>
     <h1
-      class="text-8xl py-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-violet-500"
+      class="absolute inset-x-0 top-[4%] w-full bg-gradient-to-r from-green-500 to-violet-500 bg-clip-text text-[11vw] font-extrabold leading-tight text-transparent lg:top-0 lg:text-[10.5vw] xl:text-[135px]"
     >
       {{ text }}
     </h1>
     <button
-      class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purper-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+      class="border-purper-200 absolute inset-x-0 top-[60%] m-auto w-fit border-none bg-white px-4 py-1 text-sm font-semibold text-purple-600 shadow-md hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
     >
       <router-link to="/recipe-book">Get Started</router-link>
     </button>
