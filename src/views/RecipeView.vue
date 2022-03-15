@@ -1,5 +1,5 @@
 <template>
-  <div v-if="recipe" class="content m-auto max-w-7xl">
+  <div v-if="recipe" class="content mx-auto max-w-7xl">
     <div class="recipe-header sm:mx-12 sm:grid sm:grid-cols-2 md:grid-cols-3">
       <div class="flex-center flex flex-col justify-center md:col-span-2">
         <h1 class="text-3xl md:text-5xl">{{ recipe.name }}</h1>

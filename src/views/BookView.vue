@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto max-w-7xl">
+  <div class="mx-auto max-w-7xl">
     <PicHeader text="Recipe Book" />
     <div id="locator-container">
       <div class="search-form">
@@ -35,7 +35,7 @@
         :size="65"
         color="#312e81"
         v-if="loading"
-        class="m-auto mt-20"
+        class="m-auto my-20"
       />
       <RecipeList :recipes="recipes" class="mx-5 my-5 font-medium" />
     </div>

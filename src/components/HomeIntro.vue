@@ -1,5 +1,5 @@
 <template>
-  <div class="relative m-auto max-w-7xl">
+  <div class="relative mx-auto max-w-7xl">
     <div class="aspect-w-1 aspect-h-1 lg:aspect-w-3 lg:aspect-h-2">
       <img
         src="../assets/spoons.jpg"
@@ -12,11 +12,13 @@
     >
       {{ text }}
     </h1>
-    <button
-      class="absolute inset-x-0 top-[60%] m-auto w-fit border-none border-purple-200 bg-white px-4 py-1 text-sm font-semibold text-purple-600 shadow-md hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-    >
-      <router-link to="/recipe-book">Get Started</router-link>
-    </button>
+    <router-link to="/recipe-book">
+      <button
+        class="absolute inset-x-0 top-[60%] m-auto w-fit border-2 border-purple-600 bg-white px-4 py-1 text-xl text-sm font-semibold text-purple-600 shadow-md hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+      >
+        Get Started
+      </button>
+    </router-link>
   </div>
 </template>
 
