@@ -4,16 +4,16 @@
       <img
         src="../assets/spoons.jpg"
         alt="spoons"
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover xl:rounded-xl"
       />
     </div>
     <h1
-      class="absolute inset-x-0 top-[4%] w-full bg-gradient-to-r from-green-500 to-violet-500 bg-clip-text text-[11vw] font-extrabold leading-tight text-transparent lg:top-0 lg:text-[10.5vw] xl:text-[135px]"
+      class="absolute inset-x-0 top-[4%] w-full bg-gradient-to-r from-green-400 to-violet-400 bg-clip-text text-[11vw] font-extrabold leading-tight text-transparent lg:top-0 lg:text-[10.5vw] xl:text-[135px]"
     >
       {{ text }}
     </h1>
     <button
-      class="border-purper-200 absolute inset-x-0 top-[60%] m-auto w-fit border-none bg-white px-4 py-1 text-sm font-semibold text-purple-600 shadow-md hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+      class="absolute inset-x-0 top-[60%] m-auto w-fit border-none border-purple-200 bg-white px-4 py-1 text-sm font-semibold text-purple-600 shadow-md hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
     >
       <router-link to="/recipe-book">Get Started</router-link>
     </button>
@@ -31,5 +31,4 @@ export default Vue.extend({
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>

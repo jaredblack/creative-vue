@@ -73,6 +73,9 @@ export default {
   },
   methods: {
     getRecipes(queryString, tagName, random) {
+      if (this.tagsVisible) {
+        this.toggleTags();
+      }
       this.loading = true;
       let apiURL = "https://tasty.p.rapidapi.com/recipes/list";
       let offset = 0;

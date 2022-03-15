@@ -38,7 +38,7 @@
       </button>
     </div>
     <div
-      class="mx-6 inline-block w-auto rounded-xl border-2 py-2 px-2 transition-all"
+      class="animate-drop mx-6 inline-block w-auto rounded-xl border-2 py-2 px-2"
     >
       <div v-if="currentTab === 'cuisine'">
         <button
@@ -153,9 +153,23 @@ export default {
 </script>
 
 <style>
-.tag-tab {
-  @apply mx-0 mb-0 rounded-none border-x-0 border-b-2 border-t-0 bg-indigo-50;
+.animate-drop {
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
 }
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 .active {
   @apply border-b-indigo-500 bg-indigo-300;
 }
